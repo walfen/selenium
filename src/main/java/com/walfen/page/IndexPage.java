@@ -11,51 +11,61 @@ import org.openqa.selenium.support.PageFactory;
  *
  */
 public class IndexPage {
+	
+	/**
+	 * The path of the index page.
+	 */
+	private static String path = "/selenium-test";
 
 	/**
-	 * The web driver.
+	 * The input text element.
 	 */
-	private WebDriver driver;
-
-	@FindBy(xpath="//*[@id='hello-input']")
-	private WebElement helloInput;
+	@FindBy(xpath="//*[@id='test-input']")
+	private WebElement inputText;
 	
-	@FindBy(xpath="//*[@id='hello-button']")
-	private WebElement helloButton;
+	/**
+	 * The button element.
+	 */
+	@FindBy(xpath="//*[@id='test-button']")
+	private WebElement button;
 	
-	@FindBy(xpath="//*[@id='hello-text']")
-	private WebElement helloText;
+	/**
+	 * The text element.
+	 */
+	@FindBy(xpath="//*[@id='test-text']")
+	private WebElement text;
 	
 	/**
 	 * Creates an index page.
 	 * @param driver - the driver
+	 * @param url 
 	 */
-	public IndexPage(WebDriver driver) {
-		this.driver = driver;
+	public IndexPage(WebDriver driver, String url) {
+		driver.get(url + path);
 		PageFactory.initElements(driver, this);
 	}
 	
 	/**
-	 * Fills the hello input text.
+	 * Fills the input text.
 	 * @param text - the text
 	 */
-	public void fillHelloInput(String text) {
-		helloInput.sendKeys(text);
+	public void fillInputText(String text) {
+		inputText.sendKeys(text);
 	}
 	
 	/**
 	 * Clicks the hello button.
 	 */
-	public void clickHelloButton() {
-		helloButton.click();
+	public void clickButton() {
+		button.click();
 	}
 	
 	/**
-	 * Returns the hello text.
-	 * @return the hello text
+	 * Returns the text.
+	 * @return the text
 	 */
-	public String readHelloText() {
-		return helloText.getText();
+	public String getText() {
+		return text.getText();
 	}
 	
 }
