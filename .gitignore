@@ -3,5 +3,5 @@
 /.project
 /.gradle
 
-/build
-
+/build/
+/bin/
