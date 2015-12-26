@@ -15,7 +15,7 @@ public class IndexPage {
 	/**
 	 * The path of the index page.
 	 */
-	private static String path = "/selenium-test";
+	private static final String PATH = "/selenium-test";
 
 	/**
 	 * The input text element.
@@ -41,7 +41,7 @@ public class IndexPage {
 	 * @param url 
 	 */
 	public IndexPage(WebDriver driver, String url) {
-		driver.get(url + path);
+		driver.get(url + PATH);
 		PageFactory.initElements(driver, this);
 	}
 	
