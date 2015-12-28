@@ -30,7 +30,7 @@ public class IndexPage {
 	private WebElement button;
 	
 	/**
-	 * The text element.
+	 * The span element.
 	 */
 	@FindBy(xpath="//*[@id='test-text']")
 	private WebElement text;
@@ -54,7 +54,7 @@ public class IndexPage {
 	}
 	
 	/**
-	 * Clicks the hello button.
+	 * Clicks the button.
 	 */
 	public void clickButton() {
 		button.click();
